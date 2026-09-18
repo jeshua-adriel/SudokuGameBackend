@@ -1,0 +1,28 @@
+{% extends "admin/base_site.html" %}
+
+{% block extrahead %}
+{{ block.super }}
+<script>
+    (function() {
+        const IDLE_TIMEOUT = 300000; 
+        let idleTimer;
+
+        function resetTimer() {
+            clearTimeout(idleTimer);
+            idleTimer = setTimeout(logoutUser, IDLE_TIMEOUT);
+        }
+
+        function logoutUser() {
+
+            window.location.href = "{% url 'admin:logout' %}";
+        }
+
+        const targetEvents = ['mousedown', 'mousemove', 'keypress', 'scroll', 'touchstart'];
+        targetEvents.forEach(function(event) {
+            document.addEventListener(event, resetTimer, true);
+        });
+        
+        resetTimer();
+    })();
+</script>
+{% endblock %}

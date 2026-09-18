@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-uz()ez!-^vfl$14%cwv%(nfu3%cgz8lv7+%43(6pf2389!kfe_
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver"]
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "testserver", "sudokugamebackend.onrender.com", "sudo-aptget-ko.netlify.app"]
 
 
 # Application definition
